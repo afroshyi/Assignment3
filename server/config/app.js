@@ -3,6 +3,11 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
 
 let app = express();
 let indexRouter = require('../routes/index');
@@ -24,6 +29,24 @@ mongoDB.once('open',()=>{
   console.log("Connected with the MongoDB")
 });
 mongoose.connect(DB.URI,{useNewURIParser:true,useUnifiedTopology:true})
+
+app.use(session({
+  secret:"SomeSecret",
+  saveUninitialized:false,
+  resave:false
+}))
+
+app.use(flash());
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+let userModel = require('../models/user');
+let user = userModel.User;
+
+passport.serializeUser(user.serializeUser());
+passport.deserializeUser(user.deserializeUser());
+
 /* main().catch(err => console.log(err));
 
 async function main() {
