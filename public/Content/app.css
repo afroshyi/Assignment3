@@ -4,6 +4,17 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+#main-content {
+    min-height: calc(100vh - 56px);
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h6 {
@@ -95,24 +106,24 @@ p {
 .homebanner {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full screen height */
+    height: 100vh;
     background-image: url('/Assets/homepage.jpg');
-    background-size: cover; /* Ensures the image covers the container */
-    background-repeat: no-repeat; /* Prevents repeating of the image */
-    background-position: center; /* Centers the image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
-    align-items: center; /* Vertically centers the text */
-    justify-content: center; /* Horizontally centers the text */
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: #f8f9fa;
     padding: 20px;
-    overflow: hidden; /* Prevents scrolling issues if content overflows */
+    overflow: hidden;
 }
 
 .homebanner .banner-text {
     position: relative;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.6); /* Adds a translucent background for readability */
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 20px;
     border-radius: 10px;
 }
@@ -148,6 +159,12 @@ footer {
     padding: 1rem 0;
     text-align: center;
     font-size: 0.9rem;
+}
+
+.navbar.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Buttons */
