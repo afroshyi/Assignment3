@@ -11,16 +11,18 @@ h1, h6 {
 }
 
 p {
-    color: #495057;
+    color: #343a40;
 }
 
 /* Navbar */
 .navbar {
     font-size: 1rem;
+    background-color: #343a40;
 }
 
 .navbar-brand {
     font-weight: bold;
+    color: #f8f9fa;
 }
 
 .navbar-nav .nav-link {
@@ -31,11 +33,112 @@ p {
 
 .navbar-nav .nav-link.active {
     font-weight: bold;
-    color: #ffc107;
+    color: #f8f9fa;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ffcc00;
+    color: #343a40;
+}
+
+/* Meal Sections */
+.meal1, .meal2, .meal3, .meal4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 300px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.meal1 img, .meal2 img, .meal3 img, .meal4 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner-text {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #343a40;
+}
+
+.banner-text h3 {
+    font-size: 1.2em;
+    color: #343a40;
+}
+
+.banner-text p {
+    margin: 5px 0;
+    color: #343a40;
+}
+
+.banner-text .btn {
+    font-size: 0.9em;
+    padding: 8px 15px;
+    background-color: #343a40;
+    color: #f8f9fa;
+    border: none;
+}
+
+.banner-text .btn:hover {
+    background-color: #343a40;
+}
+
+/* Home Banner */
+.homebanner {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    background-image: url('/Assets/homepage.jpg');
+    background-size: cover; /* Ensures the image covers the container */
+    background-repeat: no-repeat; /* Prevents repeating of the image */
+    background-position: center; /* Centers the image */
+    display: flex;
+    align-items: center; /* Vertically centers the text */
+    justify-content: center; /* Horizontally centers the text */
+    text-align: center;
+    color: #f8f9fa;
+    padding: 20px;
+    overflow: hidden; /* Prevents scrolling issues if content overflows */
+}
+
+.homebanner .banner-text {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.6); /* Adds a translucent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.homebanner .banner-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #f8f9fa;
+}
+
+.homebanner .banner-text p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #f8f9fa;
+}
+
+.homebanner .banner-text .btn {
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: #f8f9fa;
+    border: none;
+}
+
+.homebanner .banner-text .btn:hover {
+    background-color: #343a40;
 }
 
 /* Footer */
@@ -49,27 +152,29 @@ footer {
 
 /* Buttons */
 .btn-primary {
-    background-color: #007bff;
+    background-color: #343a40;
     border: none;
+    color: #f8f9fa;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #343a40;
 }
 
 .btn-warning {
-    background-color: #ffc107;
+    background-color: #343a40;
     border: none;
-    color: #343a40;
+    color: #f8f9fa;
 }
 
 .btn-warning:hover {
-    background-color: #e0a800;
-    color: #fff;
+    background-color: #343a40;
+    color: #f8f9fa;
 }
 
 .btn-danger:hover {
-    background-color: #c82333;
+    background-color: #343a40;
+    color: #f8f9fa;
 }
 
 /* Table */
@@ -98,8 +203,8 @@ footer {
 }
 
 .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #343a40;
+    box-shadow: 0 0 5px rgba(52, 58, 64, 0.5);
 }
 
 label {
@@ -115,5 +220,26 @@ label {
 
     .container {
         padding: 0 1rem;
+    }
+
+    .homebanner {
+        height: 300px;
+    }
+
+    .homebanner .banner-text {
+        padding: 15px;
+    }
+
+    .homebanner .banner-text h1 {
+        font-size: 1.5em;
+    }
+
+    .homebanner .banner-text p {
+        font-size: 1em;
+    }
+
+    .homebanner .banner-text .btn {
+        font-size: 0.9em;
+        padding: 8px 15px;
     }
 }
